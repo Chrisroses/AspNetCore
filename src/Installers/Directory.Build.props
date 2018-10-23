@@ -1,0 +1,10 @@
+<Project>
+
+  <PropertyGroup>
+    <RuntimeInstallerBaseName>aspnetcore-runtime</RuntimeInstallerBaseName>
+    <!-- Name = aspnet-runtime-internal for files are only produced so we can hand them off to the dotnet/cli repo. -->
+    <InternalInstallerBaseName>$(RuntimeInstallerBaseName)-internal</InternalInstallerBaseName>
+  </PropertyGroup>
+
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory)..\, Directory.Build.props))\Directory.Build.props" />
+</Project>
